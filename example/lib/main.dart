@@ -43,8 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _diffTimeoutEditingController = TextEditingController();
     _editCostEditingController = TextEditingController();
     _oldTextEditingController.text = "Let's go to Hatay and eat something delicious. Because everything there is super delicious";
-    _newTextEditingController.text =
-        "Let's go to Antakya eat something very delicious and unique. Because everything(especially kebabs and kunefe) super delicious!!!";
+    _newTextEditingController.text = "Let's go to Antakya eat something very delicious and unique. Because everything(especially kebabs and kunefe) super delicious!!!";
     _diffTimeoutEditingController.text = "1.0";
     _editCostEditingController.text = "4";
     super.initState();
@@ -127,6 +126,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Center(
                         child: PrettyDiffText(
+                          textAlign: TextAlign.center,
+                          oldText: _oldTextEditingController.text,
+                          newText: _newTextEditingController.text,
+                          diffCleanupType: _diffCleanupType ?? DiffCleanupType.SEMANTIC,
+                          diffTimeout: diffTimeoutToDouble(),
+                          diffEditCost: editCostToDouble(),
+                        ),
+                      ),
+                      Center(
+                        child: PrettyDiffTextAdded(
                           textAlign: TextAlign.center,
                           oldText: _oldTextEditingController.text,
                           newText: _newTextEditingController.text,

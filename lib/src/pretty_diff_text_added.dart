@@ -89,8 +89,8 @@ class PrettyDiffTextAdded extends StatelessWidget {
       }
     }
 
-    return RichText(
-      text: TextSpan(
+    return Text.rich(
+      TextSpan(
         text: '',
         style: defaultTextStyle,
         children: textSpans,
